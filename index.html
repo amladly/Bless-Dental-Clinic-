@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- ربط ملف الاستايل -->
-    <link rel="stylesheet" href="main.css?v=5.0">
+    <link rel="stylesheet" href="main.css?v=6.0">
 </head>
 <body>
 
@@ -264,6 +264,128 @@
             </div>
         </div>
     </section>
+    <!-- قسم حجز المواعيد (Booking Section) -->
+    <section id="booking" class="booking-section">
+        <div class="booking-container">
+            
+            <!-- الجهة اليمنى: المعلومات والمميزات -->
+            <div class="booking-info">
+                <h2 class="booking-title">احجز موعدك الآن</h2>
+                <p class="booking-subtitle">احجز موعد استشارة مجانية مع أفضل أطباء الأسنان</p>
+                
+                <div class="booking-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <span class="feature-text">مواعيد مرنة</span>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <span class="feature-text">أطباء متخصصون</span>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <span class="feature-text">تأكيد فوري</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الجهة اليسرى: كارت نموذج الحجز -->
+            <div class="booking-card">
+                <form id="appointmentForm" onsubmit="sendBookingToWhatsApp(event)">
+                    
+                    <div class="form-group">
+                        <label for="fullName">الاسم الكامل</label>
+                        <input type="text" id="fullName" placeholder="أدخل اسمك بالكامل" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" placeholder="أدخل رقم هاتفك" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" placeholder="example@domain.com">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prefDate">التاريخ المفضل</label>
+                            <input type="date" id="prefDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="prefTime">الوقت المفضل</label>
+                            <select id="prefTime" required>
+                                <option value="" disabled selected>اختر الوقت</option>
+                                <option value="صباحاً (4:00 م - 6:00 م)">4:00 م - 6:00 م</option>
+                                <option value="مساءً (6:00 م - 8:00 م)">6:00 م - 8:00 م</option>
+                                <option value="مساءً (8:00 م - 10:00 م)">8:00 م - 10:00 م</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceType">نوع الخدمة</label>
+                        <select id="serviceType" required>
+                            <option value="" disabled selected>اختر الخدمة</option>
+                            <option value="حشو العصب وعلاج الجذور">حشو العصب وعلاج الجذور</option>
+                            <option value="تبييض الأسنان">تبييض الأسنان</option>
+                            <option value="زراعة الأسنان">زراعة الأسنان</option>
+                            <option value="تقويم الأسنان">تقويم الأسنان</option>
+                            <option value="جراحة الفم">جراحة الفم</option>
+                            <option value="طب أسنان الأطفال">طب أسنان الأطفال</option>
+                            <option value="فينير الأسنان وحشوات الكومبوزيت">فينير الأسنان وحشوات الكومبوزيت</option>
+                            <option value="التركيبات الثابتة والمتحركة">التركيبات الثابتة والمتحركة</option>
+                            <option value="كشف واستشارة عامة">كشف واستشارة عامة</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">ملاحظات إضافية</label>
+                        <textarea id="notes" rows="3" placeholder="اكتب أي ملاحظات أو استفسارات"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit-booking">احجز الموعد</button>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- سكربت إرسال بيانات النموذج للواتساب -->
+    <script>
+        function sendBookingToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('fullName').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value || 'غير محدد';
+            const date = document.getElementById('prefDate').value;
+            const time = document.getElementById('prefTime').value;
+            const service = document.getElementById('serviceType').value;
+            const notes = document.getElementById('notes').value || 'لا يوجد';
+
+            const message = `مرحباً عيادة Bless Dental، أود حجز موعد جديد:%0A` +
+                            `• *الاسم:* ${encodeURIComponent(name)}%0A` +
+                            `• *الهاتف:* ${encodeURIComponent(phone)}%0A` +
+                            `• *البريد:* ${encodeURIComponent(email)}%0A` +
+                            `• *التاريخ:* ${encodeURIComponent(date)}%0A` +
+                            `• *الوقت:* ${encodeURIComponent(time)}%0A` +
+                            `• *الخدمة:* ${encodeURIComponent(service)}%0A` +
+                            `• *ملاحظات:* ${encodeURIComponent(notes)}`;
+
+            window.open(`https://wa.me/201108075117?text=${message}`, '_blank');
+        }
+    </script>
 
 
     <!-- ربط ملف الجافاسكريبت -->
