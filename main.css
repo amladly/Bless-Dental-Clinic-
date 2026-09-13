@@ -440,8 +440,8 @@ body {
 .feature-icon {
     width: 45px;
     height: 45px;
-    background-color: #f3efe6;
-    color: #c5a059;
+    background-color: ⁠#eef5ff⁠;
+    color: #4a80e2;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -515,8 +515,8 @@ body {
 
 .btn-submit-booking {
     width: 100%;
-    background-color: #c5a059;
-    color: var(--white);
+    background-color: #4a80e2;
+    color: #ffffff;
     border: none;
     padding: 14px;
     border-radius: 12px;
