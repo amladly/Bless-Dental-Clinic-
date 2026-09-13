@@ -236,8 +236,8 @@ body {
     color: var(--text-muted);
     line-height: 1.5;
     margin: 0;
-}
-/* ==========================================
+    }
+    /* ==========================================
    قسم الخدمات (Services Section)
    ========================================== */
 .services-section {
@@ -284,17 +284,20 @@ body {
     box-shadow: var(--shadow-hover);
 }
 
-/* صورة الخدمة مع الدائرة البارزة للأيقونة */
+/* تعديل عرض الصور بالكامل بدون قص */
 .service-img-wrapper {
     position: relative;
     width: 100%;
     height: 190px;
+    background-color: #fcfcfc;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .service-img-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* إظهار الصورة بالكامل دون اقتطاع */
 }
 
 .service-icon {
@@ -302,22 +305,22 @@ body {
     bottom: -22px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
-    height: 50px;
+    width: 46px;
+    height: 46px;
     background-color: var(--accent-blue);
     color: var(--white);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     border: 3px solid var(--white);
     box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
 }
 
 /* محتوى الكارت والنقاط */
 .service-content {
-    padding: 35px 20px 25px;
+    padding: 35px 20px 20px;
     text-align: center;
     flex: 1;
     display: flex;
@@ -335,13 +338,13 @@ body {
     font-size: 0.9rem;
     color: var(--text-muted);
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .service-list {
     list-style: none;
     padding: 0;
-    margin: auto 0 0 0;
+    margin: 0 0 20px 0;
     text-align: right;
     display: inline-block;
 }
@@ -359,3 +362,28 @@ body {
     color: var(--accent-blue);
     font-size: 0.8rem;
 }
+
+/* زر احجز الآن للخدمة */
+.btn-service-booking {
+    margin-top: auto;
+    background-color: var(--accent-blue);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+}
+
+.btn-service-booking:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(74, 144, 226, 0.35);
+}
+
