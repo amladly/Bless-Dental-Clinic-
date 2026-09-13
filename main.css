@@ -29,7 +29,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     box-shadow: 0 2px 15px rgba(0,0,0,0.04);
     z-index: 1000;
@@ -39,35 +39,15 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* توسيط القائمة في المنتصف */
     align-items: center;
-    padding: 12px 20px;
-}
-
-.logo-box {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-}
-
-.nav-logo {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.logo-text {
-    font-weight: 800;
-    font-size: 1.2rem;
-    color: var(--primary-blue);
+    padding: 14px 20px;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 40px; /* مسافة مريحة بين الكلمتين */
     margin: 0;
     padding: 0;
 }
@@ -75,11 +55,12 @@ body {
 .nav-links a {
     text-decoration: none;
     color: var(--text-dark);
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 1.05rem;
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover {
     color: var(--primary-blue);
 }
 
@@ -90,7 +71,7 @@ body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #f4f8fb 0%, #eef5fc 100%);
-    padding: 100px 20px 40px;
+    padding: 90px 20px 40px;
     text-align: center;
 }
 
@@ -113,7 +94,7 @@ body {
     transition: transform 0.4s ease;
 }
 
-/* حركة الطفو الناعمة للوجو والعناصر البارزة */
+/* حركة الطفو الناعمة للوجو */
 .floating-element {
     animation: float 4s ease-in-out infinite;
 }
@@ -126,14 +107,14 @@ body {
 
 /* النصوص */
 .main-title {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 800;
     color: var(--primary-blue);
     margin-bottom: 10px;
 }
 
 .sub-title {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 30px;
