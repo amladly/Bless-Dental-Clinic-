@@ -1,4 +1,6 @@
-/* إعدادات المتغيرات والألوان الهادئة */
+/* ==========================================
+   إعدادات المتغيرات والألوان الهادئة
+   ========================================== */
 :root {
     --bg-light: #f4f8fb;          /* أبيض مائل للأزرق الخفيف جداً */
     --accent-soft: #e3f2fd;       /* أزرق سماوي ناعم للغاية */
@@ -10,7 +12,9 @@
     --shadow-hover: 0 15px 35px rgba(74, 144, 226, 0.22);
 }
 
-/* إعدادات الخط والتنقل السلس */
+/* ==========================================
+   إعدادات العامة والتنقل
+   ========================================== */
 html {
     scroll-behavior: smooth;
 }
@@ -24,7 +28,9 @@ body {
     direction: rtl;
 }
 
-/* الشريط العلوي Nav */
+/* ==========================================
+   الشريط العلوي (Navbar)
+   ========================================== */
 .header {
     position: fixed;
     top: 0;
@@ -39,7 +45,7 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     display: flex;
-    justify-content: center; /* توسيط القائمة في المنتصف */
+    justify-content: center;
     align-items: center;
     padding: 14px 20px;
 }
@@ -47,7 +53,7 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 40px; /* مسافة مريحة بين الكلمتين */
+    gap: 40px;
     margin: 0;
     padding: 0;
 }
@@ -64,7 +70,9 @@ body {
     color: var(--primary-blue);
 }
 
-/* الواجهة الرئيسية Hero Section */
+/* ==========================================
+   الواجهة الرئيسية (Hero Section)
+   ========================================== */
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -79,7 +87,6 @@ body {
     max-width: 800px;
 }
 
-/* حركة وبروز اللوجو */
 .hero-logo-wrapper {
     margin-bottom: 25px;
 }
@@ -105,7 +112,6 @@ body {
     100% { transform: translateY(0px); }
 }
 
-/* النصوص */
 .main-title {
     font-size: 2.3rem;
     font-weight: 800;
@@ -120,7 +126,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* الأزرار والتأثيرات */
 .hero-buttons {
     display: flex;
     justify-content: center;
@@ -158,4 +163,78 @@ body {
 .btn-whatsapp:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(37, 211, 102, 0.25);
+}
+
+/* ==========================================
+   قسم المربعات الأربعة (Features Grid)
+   ========================================== */
+.features-section {
+    padding: 70px 20px;
+    background-color: var(--bg-light);
+}
+
+.features-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.quad-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.quad-card {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(74, 144, 226, 0.08);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quad-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-blue);
+}
+
+.quad-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-soft);
+    color: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+}
+
+.quad-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.quad-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
 }
